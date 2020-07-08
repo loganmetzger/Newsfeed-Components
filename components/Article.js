@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'blurple',
+    date: 'blurple',
+    firstParagraph: 'blurple',
+    secondParagraph: 'blurple',
+    thirdParagraph: 'blurple'
   }
 ];
 
@@ -104,11 +111,14 @@ const data = [
   Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
 
 */
+
+// Select entire articles div using query selector 
 const articles = document.querySelector('.articles');
 
-
+// Create function that takes data as input 
 function articleMaker(articleData) {
 
+  // Create elements one by one 
   const article = document.createElement('div')
   const headline = document.createElement('h2')
   const date = document.createElement('p')
@@ -117,6 +127,7 @@ function articleMaker(articleData) {
   const p3 = document.createElement('p')
   const expandButton = document.createElement('span')
 
+  // append elements to main article div 
   article.appendChild(headline)
   article.appendChild(date)
   article.appendChild(p1)
@@ -124,10 +135,13 @@ function articleMaker(articleData) {
   article.appendChild(p3)
   article.appendChild(expandButton)
 
+  // give class names to things that need it 
+  // Use classList.add without a . before class name 
   article.className = 'article'
   date.className = 'date'
   expandButton.classList.add('expandButton')
 
+  // Add text to everything that needs it using data object 
   headline.textContent = articleData.title
   date.textContent = articleData.date
   p1.textContent = articleData.firstParagraph
@@ -135,12 +149,16 @@ function articleMaker(articleData) {
   p3.textContent = articleData.thirdParagraph
   expandButton.textContent = '+'
 
+  // on click event listener that toggles article open class 
   expandButton.addEventListener('click', event => {
     article.classList.toggle('article-open')
   })
 
+  // return that bad boy 
   return article
 }
+
+// for each loop appends new articles created by function to our articles div
 
 data.forEach ( item => {
   articles.append(articleMaker(item))
@@ -162,4 +180,4 @@ data.forEach ( item => {
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
 
-articleMaker(data)
+// articleMaker(data)
