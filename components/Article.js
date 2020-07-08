@@ -103,7 +103,35 @@ const data = [
 
   Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
 
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+*/
+const articles = document.querySelector('.articles');
+
+
+function articleMaker(data) {
+
+
+  const article = document.createElement('div')
+  const headline = document.createElement('h2')
+  const date = document.createElement('p')
+  const p1 = document.createElement('p')
+  const p2 = document.createElement('p')
+  const p3 = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+  article.appendChild('headline')
+  article.appendChild('date')
+  article.appendChild('p1')
+  article.appendChild('p2')
+  article.appendChild('p3')
+  article.appendChild('expandButton')
+
+  article.className = 'article'
+  date.className = 'date'
+  expandButton.className = 'expandButton'
+
+}
+
+ /* Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: Don't forget to return something from your function!
 
@@ -111,3 +139,5 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+articleMaker(data)
