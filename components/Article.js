@@ -126,17 +126,17 @@ function articleMaker(articleData) {
 
   article.className = 'article'
   date.className = 'date'
-  expandButton.className = 'expandButton'
+  expandButton.classList.add('expandButton')
 
   headline.textContent = articleData.title
   date.textContent = articleData.date
   p1.textContent = articleData.firstParagraph
   p2.textContent = articleData.secondParagraph
   p3.textContent = articleData.thirdParagraph
-  expandButton.textContent = '+Expand'
+  expandButton.textContent = '+'
 
   expandButton.addEventListener('click', event => {
-    article.classList.toggle('.article-open')
+    article.classList.toggle('article-open')
   })
 
   return article
