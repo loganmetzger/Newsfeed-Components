@@ -107,8 +107,7 @@ const data = [
 const articles = document.querySelector('.articles');
 
 
-function articleMaker(data) {
-
+function articleMaker(articleData) {
 
   const article = document.createElement('div')
   const headline = document.createElement('h2')
@@ -129,9 +128,32 @@ function articleMaker(data) {
   date.className = 'date'
   expandButton.className = 'expandButton'
 
+  headline.textContent = articleData.title
+  date.textContent = articleData.date
+  p1.textContent = articleData.firstParagraph
+  p2.textContent = articleData.secondParagraph
+  p3.textContent = articleData.thirdParagraph
+  expandButton.textContent = '+Expand'
+
+  expandButton.addEventListener('click', event => {
+    article.classList.toggle('.article-open')
+  })
+
+  return article
 }
 
+data.forEach ( item => {
+  articles.append(articleMaker(item))
+})
+
+// panelData.forEach(object => {
+//   const theActualPanelElements = makePanel(object)
+//   accordion.appendChild(theActualPanelElements)
+// })
+
+
  /* Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+
 
   Step 3: Don't forget to return something from your function!
 
