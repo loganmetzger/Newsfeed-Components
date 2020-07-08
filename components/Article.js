@@ -118,12 +118,12 @@ function articleMaker(data) {
   const p3 = document.createElement('p')
   const expandButton = document.createElement('span')
 
-  article.appendChild('headline')
-  article.appendChild('date')
-  article.appendChild('p1')
-  article.appendChild('p2')
-  article.appendChild('p3')
-  article.appendChild('expandButton')
+  article.appendChild(headline)
+  article.appendChild(date)
+  article.appendChild(p1)
+  article.appendChild(p2)
+  article.appendChild(p3)
+  article.appendChild(expandButton)
 
   article.className = 'article'
   date.className = 'date'
